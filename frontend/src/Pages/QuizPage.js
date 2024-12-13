@@ -77,38 +77,106 @@ function QuizPage() {
   };
 
   return (
-    <Stack spacing={2} sx={{ padding: 4 }}>
-      <Typography variant="h5">Quiz for {userName}</Typography>
-      <Typography>Time Left: {formatTime(timeLeft)}</Typography>
+    <Stack spacing={2} sx={{ padding: 5 }}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <Box p={1.5}>
+          <Typography variant="h5" color="#61dafb">
+            user - {userName}
+          </Typography>
+        </Box>
+        <Box p={1.5} sx={{ background: "#23303c", borderRadius: 3 }}>
+          <Typography color="#61dafb">
+            Time Left: {formatTime(timeLeft)}
+          </Typography>
+        </Box>
+      </Stack>
 
       {questions.length > 0 && (
         <Stack spacing={2}>
-          <Typography>{`${currentQuestionIndex + 1}. ${
-            questions[currentQuestionIndex].text
-          }`}</Typography>
+          <Stack p={4} sx={{ background: "#1a2734", borderRadius: 3 }}>
+            <Typography variant="body" fontSize="2rem">{`${
+              currentQuestionIndex + 1
+            }. ${questions[currentQuestionIndex].text}`}</Typography>
+          </Stack>
           <RadioGroup
             onChange={(e) => handleAnswerChange(e.target.value)}
             value={answers[currentQuestionIndex] || ""}
           >
             <FormControlLabel
               value="A"
-              control={<Radio />}
-              label={questions[currentQuestionIndex].option_a}
+              control={
+                <Radio
+                  sx={{
+                    color: "#61dafb",
+                    margin:"0 2rem",
+                    "&.Mui-checked": {
+                      color: "#ff9800",
+                    },
+                  }}
+                />
+              }
+              label={
+                <Typography fontSize="1.2rem" sx={{ color: "#fff" }}>
+                  {questions[currentQuestionIndex].option_a}
+                </Typography>
+              }
             />
             <FormControlLabel
               value="B"
-              control={<Radio />}
-              label={questions[currentQuestionIndex].option_b}
+              control={
+                <Radio
+                  sx={{
+                    color: "#61dafb",
+                    margin:"0 2rem",
+                    "&.Mui-checked": {
+                      color: "#ff9800",
+                    },
+                  }}
+                />
+              }
+              label={
+                <Typography fontSize="1.2rem" sx={{ color: "#fff" }}>
+                  {questions[currentQuestionIndex].option_b}
+                </Typography>
+              }
             />
             <FormControlLabel
               value="C"
-              control={<Radio />}
-              label={questions[currentQuestionIndex].option_c}
+              control={
+                <Radio
+                  sx={{
+                    color: "#61dafb",
+                    margin:"0 2rem",
+                    "&.Mui-checked": {
+                      color: "#ff9800",
+                    },
+                  }}
+                />
+              }
+              label={
+                <Typography fontSize="1.2rem" sx={{ color: "#fff" }}>
+                  {questions[currentQuestionIndex].option_c}
+                </Typography>
+              }
             />
             <FormControlLabel
               value="D"
-              control={<Radio />}
-              label={questions[currentQuestionIndex].option_d}
+              control={
+                <Radio
+                  sx={{
+                    color: "#61dafb",
+                    margin:"0 2rem",
+                    "&.Mui-checked": {
+                      color: "#ff9800",
+                    },
+                  }}
+                />
+              }
+              label={
+                <Typography fontSize="1.2rem" sx={{ color: "#fff" }}>
+                  {questions[currentQuestionIndex].option_d}
+                </Typography>
+              }
             />
           </RadioGroup>
         </Stack>
@@ -122,7 +190,7 @@ function QuizPage() {
         >
           Previous
         </Button>
-        <Box>
+        <Stack direction="row" gap={2}>
           <Button
             variant="contained"
             onClick={goToNextQuestion}
@@ -130,14 +198,10 @@ function QuizPage() {
           >
             Next
           </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSubmit}
-          >
+          <Button variant="contained" color="success" onClick={handleSubmit}>
             Submit Quiz
           </Button>
-        </Box>
+        </Stack>
       </Stack>
     </Stack>
   );

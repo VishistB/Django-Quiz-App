@@ -77,11 +77,11 @@ function QuizPage() {
   };
 
   return (
-    <Stack spacing={2} sx={{ padding: 5 }}>
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
+    <Stack spacing={4} sx={{ padding: 5 }}>
+      <Stack direction="row" justifyContent="space-between" alignItems="center" >
         <Box p={1.5}>
           <Typography variant="h5" color="#61dafb">
-            user - {userName}
+            {userName}
           </Typography>
         </Box>
         <Box p={1.5} sx={{ background: "#23303c", borderRadius: 3 }}>

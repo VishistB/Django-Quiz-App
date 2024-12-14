@@ -88,7 +88,7 @@ The frontend is built using React and Material-UI for a responsive and visually 
    ```bash
    pip install -r requirements.txt
    ```
-3. Set up the database (PostgreSQL):
+3. Set up the database (SQLlite):
    - Update `DATABASES` in `settings.py` with your credentials.
    - Run migrations:
      ```bash

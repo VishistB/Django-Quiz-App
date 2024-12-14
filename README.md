@@ -32,7 +32,7 @@ A full-stack Quiz App designed to provide users with an interactive quiz experie
 ### Backend:
 - **Django** (Python 3.12.7)
 - **Django REST Framework** for API endpoints.
-- **PostgreSQL** for database management (AWS RDS).
+- **SQLlite** default db in django.
 
 ### Frontend:
 - **React** (React Router for navigation).

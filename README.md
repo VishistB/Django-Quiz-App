@@ -2,6 +2,8 @@
 
 A full-stack Quiz App designed to provide users with an interactive quiz experience. The app has a **React-based frontend** and a **Django REST API backend**, ensuring a seamless flow of data and functionality.
 
+![alt text](image.png)
+
 ---
 
 ## Table of Contents
@@ -52,11 +54,8 @@ The backend is built with Django and exposes REST API endpoints to manage quiz-r
        - Correct answer (only for internal use).
 
 2. **Database:**
-   - The questions are stored in a PostgreSQL database.
+   - The questions are stored in the default SQLlite database.
    - The schema includes fields for question text, options, and the correct answer.
-
-3. **Hosting:**
-   - The backend runs on an EC2 instance, accessible at `http://127.0.0.1:8000` (replace with actual domain in production).
 
 ---
 
